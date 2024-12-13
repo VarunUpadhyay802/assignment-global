@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Users from "./components/Users";
-import ProtectedRouter from "./ProcetorRoutes/ProtectoRouter";
+import ProtectedRouter from "./RoutesProtector/ProtectoRouter";
 import { ToastContainer } from "react-toastify";
 
 function App() {
+  // rules 4 : Persist the login token in local storage or session storage.
   const [token, setToken] = useState(localStorage.getItem("token"));
 
   useEffect(() => {

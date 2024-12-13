@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { updateUser } from './utils/api';
+import { updateUser } from './utilities/api';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
