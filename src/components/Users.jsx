@@ -29,7 +29,7 @@ function Users() {
     setSearchParams({ page: newPage });
   };
 
-  // Filter users based on the search query
+
   const filteredUsers = users.filter(
     (user) =>
       user.first_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -46,7 +46,7 @@ o">
           <img
             src="/employwise_logo.jpg"
             alt="EmployeeWise Logo"
-            className=" md:h-14 md:w-14 h-12 w-12 object-cover rounded-lg" // Adjusted size and added object-cover
+            className=" md:h-14 md:w-14 h-12 w-12 object-cover rounded-lg" 
           />
         </h2>
 
@@ -61,7 +61,7 @@ o">
           />
         </div>
 
-        {/* Conditional rendering for users */}
+    
         {filteredUsers.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {filteredUsers.map((user) => (
