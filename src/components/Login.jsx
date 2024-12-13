@@ -3,13 +3,11 @@ import { loginUser } from "../utilities/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function Login({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [passwordVisible, setPasswordVisible] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -22,7 +20,6 @@ function Login({ setToken }) {
       toast.success("Login Successful!", { position: "top-center" });
       navigate("/users?page=1");
     } catch (err) {
-      setPasswordVisible(false);
       toast.error("Invalid email or password!", { position: "top-center" });
     } finally {
       setLoading(false);
@@ -50,7 +47,7 @@ function Login({ setToken }) {
                 id="email"
                 className="w-full lowercase px-4 py-3 border shadow-md border-gray-400 rounded-full outline-none text-gray-600"
                 type="email"
-                placeholder="hey123@gmail.com"
+                placeholder="varun.uwork@gmail.com"
                 value={email}
                 autoComplete="email-address"
                 onChange={(e) => setEmail(e.target.value)}
@@ -60,30 +57,15 @@ function Login({ setToken }) {
               <label htmlFor="password" className="pl-3 font-semibold">
                 Password
               </label>
-              <div className="relative">
-                <input
-                  id="password"
-                  className="w-full px-4 py-3 border shadow-md border-gray-400 rounded-full outline-none text-gray-600"
-                  type={passwordVisible ? "text" : "password"}
-                  placeholder="Password"
-                  value={password}
-                  autoComplete="current-password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                {password && (
-                  <span
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
-                    onClick={() => setPasswordVisible(!passwordVisible)}
-                    title={passwordVisible ? "Hide Password" : "Show Password"}
-                  >
-                    {passwordVisible ? (
-                      <FaEyeSlash className="text-gray-500" />
-                    ) : (
-                      <FaEye className="text-gray-500" />
-                    )}
-                  </span>
-                )}
-              </div>
+              <input
+                id="password"
+                className="w-full px-4 py-3 border shadow-md border-gray-400 rounded-full outline-none text-gray-600"
+                type="password"
+                placeholder="*********"
+                value={password}
+                autoComplete="current-password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <button
               className={`bg-blue-600 hover:bg-blue-700 font-semibold outline-none mt-2 md:mt-8 px-4 py-3 text-white capitalize rounded-full flex items-center justify-center transition-all w-full duration-300 ${
