@@ -39,16 +39,26 @@ function UserCard({ user, onDelete }) {
       </div>
       <div className="flex justify-between mt-6">
         <button
-          className="text-blue-500 border border-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white transition duration-200"
+          className="flex items-center text-blue-500 px-4 py-2 rounded-md hover:scale-105 transition-transform duration-200"
           onClick={() => setIsEditing(true)}
         >
-          Edit
+          <img
+            src="/edit.png"
+            alt="Edit"
+            className="w-5 h-5 mr-2"
+          />
+          
         </button>
         <button
-          className="text-red-500 border border-red-500 px-4 py-2 rounded-md hover:bg-red-500 hover:text-white transition duration-200"
+          className="flex items-center text-red-500 px-4 py-2 rounded-md hover:scale-105 transition-transform duration-200"
           onClick={() => handleDelete(user.id)}
         >
-          Delete
+          <img
+            src="/delete.png"
+            alt="Delete"
+            className="w-5 h-5 mr-2"
+          />
+    
         </button>
       </div>
 

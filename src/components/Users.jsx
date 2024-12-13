@@ -38,7 +38,8 @@ function Users() {
   );
 
   return (
-    <div className="min-h-screen p-8 bg-gradient-to-br from-purple-100 via-blue-100 to-pink-100">
+    <div className="min-h-screen p-8 bg-gradient-to-br from-purple-100 via-violet-50 to-blue-100
+o">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-8 text-center bg-gray-100 p-6 rounded-md shadow-md flex items-center justify-center gap-4">
           EmployeeWise
